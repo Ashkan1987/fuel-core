@@ -140,6 +140,36 @@ If the pull request resolves the relevant issues, and you want GitHub to close t
 close #123
 ```
 
+Fuel Core is mostly written in Rust, but includes components written in C++ (RocksDB).
+We are currently using the latest Rust stable toolchain to build the project.
+But for `rustfmt`, we use Rust nightly toolchain because it provides more code style features(you can check [`rustfmt.toml`](.rustfmt.toml)).
+
+### Prerequisites
+
+To build Fuel Core you'll need to at least have the following installed:
+
+-   `git` - version control
+-   [`rustup`](https://rustup.rs/) - Rust installer and toolchain manager
+-   [`clang`](http://releases.llvm.org/download.html) - Used to build system libraries (required for rocksdb).
+-   [`protoc`](https://grpc.io/docs/protoc-installation/) - Used to compile Protocol Buffer files (required by libp2p).
+
+See the [README.md](README.md#system-requirements) for platform specific setup steps.
+
+### Getting the repository
+
+```sh
+git clone https://github.com/FuelLabs/fuel-core
+```
+
+### Configuring your Rust toolchain
+
+`rustup` is the official toolchain manager for Rust.
+
+We use some additional components such as `clippy` and `rustfmt`(nightly), to install those:
+
+
+
+
 If the pull request links an issue but does not close it, you can use the keyword `ref` like this:
 
 ```md
